@@ -14,6 +14,7 @@
 		4442063321F8411E00AE047C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4442063121F8411E00AE047C /* LaunchScreen.storyboard */; };
 		4442063E21F8411E00AE047C /* Product_Hunt_API_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442063D21F8411E00AE047C /* Product_Hunt_API_ProjectTests.swift */; };
 		4442064921F8411E00AE047C /* Product_Hunt_API_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442064821F8411E00AE047C /* Product_Hunt_API_ProjectUITests.swift */; };
+		4442065A21F8451400AE047C /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442065921F8451400AE047C /* FeedTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4442064421F8411E00AE047C /* Product_Hunt_API_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Product_Hunt_API_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4442064821F8411E00AE047C /* Product_Hunt_API_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product_Hunt_API_ProjectUITests.swift; sourceTree = "<group>"; };
 		4442064A21F8411E00AE047C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4442065921F8451400AE047C /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				4442062521F8411D00AE047C /* AppDelegate.swift */,
-				4442062721F8411D00AE047C /* ViewController.swift */,
+				4442065821F844DE00AE047C /* models */,
+				4442065721F844D600AE047C /* controllers */,
+				4442065621F844CD00AE047C /* views */,
 				4442062F21F8411E00AE047C /* Assets.xcassets */,
 				4442063121F8411E00AE047C /* LaunchScreen.storyboard */,
 				4442063421F8411E00AE047C /* Info.plist */,
@@ -123,6 +127,29 @@
 				4442064A21F8411E00AE047C /* Info.plist */,
 			);
 			path = Product_Hunt_API_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		4442065621F844CD00AE047C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4442065921F8451400AE047C /* FeedTableView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		4442065721F844D600AE047C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4442062721F8411D00AE047C /* ViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		4442065821F844DE00AE047C /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4442062821F8411D00AE047C /* ViewController.swift in Sources */,
+				4442065A21F8451400AE047C /* FeedTableView.swift in Sources */,
 				4442062621F8411D00AE047C /* AppDelegate.swift in Sources */,
 				4442062E21F8411D00AE047C /* Product_Hunt_API_Project.xcdatamodeld in Sources */,
 			);
