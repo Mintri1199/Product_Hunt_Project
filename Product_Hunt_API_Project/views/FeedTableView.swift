@@ -15,7 +15,7 @@ class FeedTableView: UITableView, UITableViewDataSource {
         delegate = self
         dataSource = self
         backgroundColor =  .cyan
-        register(FeedTableViewCell.self, forCellReuseIdentifier: "cell")
+        register(FeedTableViewCell.self, forCellReuseIdentifier: "postCell")
         translatesAutoresizingMaskIntoConstraints = false
     
     }
@@ -30,7 +30,7 @@ class FeedTableView: UITableView, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
         
         return cell
     }
