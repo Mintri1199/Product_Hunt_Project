@@ -14,20 +14,36 @@ class ContentView: UIView {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .yellow
-        setupLabel()
+        setupLabels()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     var nameLabel = NameLabel(frame: .zero)
+    var cvStackView = VotesCommentsStackView(frame: .zero)
+    var taglineLabel: CVLabel = {
+        var label =  CVLabel(frame: .zero)
+        label.text = "Tagline"
+        return label
+    }()
     
-    func setupLabel() {
+    func setupLabels() {
         addSubview(nameLabel)
+        addSubview(cvStackView)
+        addSubview(taglineLabel)
+    
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             
+            cvStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cvStackView.topAnchor.constraint(equalTo: topAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: cvStackView.leadingAnchor, constant: -12),
+            
+            taglineLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            taglineLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            taglineLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             ])
     }
     

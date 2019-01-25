@@ -14,8 +14,8 @@ class VotesCommentsStackView: UIStackView {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         axis = .horizontal
-        distribution = .fillEqually
-        
+        distribution = .fill
+        spacing = 8
         addArrangedSubview(commentLabel)
         addArrangedSubview(voteLabel)
     }
@@ -32,10 +32,7 @@ class VotesCommentsStackView: UIStackView {
     
     var voteLabel: CVLabel = {
         var label = CVLabel(frame: .zero)
-        label.text = "Comments: 0"
+        label.text = "Votes: 0"
         return label
     }()
-    
-    
-    
 }

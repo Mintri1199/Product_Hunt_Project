@@ -15,18 +15,21 @@ class NameLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .yellow
         text = "Name"
-        font = UIFont(name: "Helvetica", size: 14)
+        textAlignment = .center
+        font = UIFont(name: "Helvetica", size: 15)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    // Give padding to the label
     override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         super.drawText(in: rect.inset(by: insets))
     }
     
+    // Adjust the width and height of the label
     override var intrinsicContentSize: CGSize{
         let size = super.intrinsicContentSize
         
