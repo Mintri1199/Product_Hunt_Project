@@ -8,15 +8,16 @@
 
 import UIKit
 
-class FeedTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+class FeedTableView: UITableView, UITableViewDataSource {
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         delegate = self
         dataSource = self
         backgroundColor =  .cyan
-        register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        register(FeedTableViewCell.self, forCellReuseIdentifier: "cell")
         translatesAutoresizingMaskIntoConstraints = false
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,12 +26,19 @@ class FeedTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         return cell
+    }
+}
+
+extension FeedTableView: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }

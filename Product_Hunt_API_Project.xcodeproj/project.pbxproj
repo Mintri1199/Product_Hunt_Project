@@ -16,6 +16,11 @@
 		4442064921F8411E00AE047C /* Product_Hunt_API_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442064821F8411E00AE047C /* Product_Hunt_API_ProjectUITests.swift */; };
 		4442065A21F8451400AE047C /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442065921F8451400AE047C /* FeedTableView.swift */; };
 		4442065C21F84A5700AE047C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442065B21F84A5700AE047C /* Post.swift */; };
+		4442065E21F8E29600AE047C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442065D21F8E29600AE047C /* FeedTableViewCell.swift */; };
+		4442066021FA90CC00AE047C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442065F21FA90CC00AE047C /* ContentView.swift */; };
+		4442066221FAA73500AE047C /* NameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066121FAA73500AE047C /* NameLabel.swift */; };
+		4442066421FAA8D300AE047C /* VotesCommentsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066321FAA8D300AE047C /* VotesCommentsStackView.swift */; };
+		4442066621FAA95800AE047C /* CVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066521FAA95800AE047C /* CVLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		4442064A21F8411E00AE047C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4442065921F8451400AE047C /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
 		4442065B21F84A5700AE047C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4442065D21F8E29600AE047C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		4442065F21FA90CC00AE047C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4442066121FAA73500AE047C /* NameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabel.swift; sourceTree = "<group>"; };
+		4442066321FAA8D300AE047C /* VotesCommentsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesCommentsStackView.swift; sourceTree = "<group>"; };
+		4442066521FAA95800AE047C /* CVLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				4442065921F8451400AE047C /* FeedTableView.swift */,
+				4442065D21F8E29600AE047C /* FeedTableViewCell.swift */,
+				4442065F21FA90CC00AE047C /* ContentView.swift */,
+				4442066121FAA73500AE047C /* NameLabel.swift */,
+				4442066321FAA8D300AE047C /* VotesCommentsStackView.swift */,
+				4442066521FAA95800AE047C /* CVLabel.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -286,8 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4442062821F8411D00AE047C /* ViewController.swift in Sources */,
+				4442066421FAA8D300AE047C /* VotesCommentsStackView.swift in Sources */,
+				4442065E21F8E29600AE047C /* FeedTableViewCell.swift in Sources */,
+				4442066021FA90CC00AE047C /* ContentView.swift in Sources */,
+				4442066221FAA73500AE047C /* NameLabel.swift in Sources */,
 				4442065A21F8451400AE047C /* FeedTableView.swift in Sources */,
 				4442062621F8411D00AE047C /* AppDelegate.swift in Sources */,
+				4442066621FAA95800AE047C /* CVLabel.swift in Sources */,
 				4442062E21F8411D00AE047C /* Product_Hunt_API_Project.xcdatamodeld in Sources */,
 				4442065C21F84A5700AE047C /* Post.swift in Sources */,
 			);
