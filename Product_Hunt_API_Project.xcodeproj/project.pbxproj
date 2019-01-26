@@ -21,6 +21,7 @@
 		4442066221FAA73500AE047C /* NameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066121FAA73500AE047C /* NameLabel.swift */; };
 		4442066421FAA8D300AE047C /* VotesCommentsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066321FAA8D300AE047C /* VotesCommentsStackView.swift */; };
 		4442066621FAA95800AE047C /* CVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066521FAA95800AE047C /* CVLabel.swift */; };
+		4442066821FD036800AE047C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066721FD036800AE047C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4442066121FAA73500AE047C /* NameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabel.swift; sourceTree = "<group>"; };
 		4442066321FAA8D300AE047C /* VotesCommentsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesCommentsStackView.swift; sourceTree = "<group>"; };
 		4442066521FAA95800AE047C /* CVLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVLabel.swift; sourceTree = "<group>"; };
+		4442066721FD036800AE047C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4442065B21F84A5700AE047C /* Post.swift */,
+				4442066721FD036800AE047C /* NetworkManager.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				4442066421FAA8D300AE047C /* VotesCommentsStackView.swift in Sources */,
 				4442065E21F8E29600AE047C /* FeedTableViewCell.swift in Sources */,
 				4442066021FA90CC00AE047C /* ContentView.swift in Sources */,
+				4442066821FD036800AE047C /* NetworkManager.swift in Sources */,
 				4442066221FAA73500AE047C /* NameLabel.swift in Sources */,
 				4442065A21F8451400AE047C /* FeedTableView.swift in Sources */,
 				4442062621F8411D00AE047C /* AppDelegate.swift in Sources */,

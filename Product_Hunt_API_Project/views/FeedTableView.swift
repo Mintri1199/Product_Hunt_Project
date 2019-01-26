@@ -32,8 +32,7 @@ class FeedTableView: UITableView, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! FeedTableViewCell
         let post = mockData[indexPath.row ]
-        cell.post =  post
-        
+        cell.post = post
         return cell
     }
     
