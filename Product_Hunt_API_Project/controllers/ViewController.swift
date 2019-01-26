@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         navigationItem.title = "Feed"
         view.backgroundColor = .white
         setupTableView()
+        feedTableView.updateFeed()
     }
     
     var feedTableView = FeedTableView()

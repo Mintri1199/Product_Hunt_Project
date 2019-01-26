@@ -11,7 +11,7 @@ import Foundation
 class NetworkManager {
     let urlSession = URLSession.shared
     var baseURL = "https://api.producthunt.com/v1/"
-    var token = " "
+    var token = ""
 
 
     func getPosts(completion: @escaping ([Post]) -> ()) {
@@ -23,21 +23,21 @@ class NetworkManager {
         request.allHTTPHeaderFields = [
             "Accept": "application/json",
             "Content-Type" : "application/json",
-            "Authorization" : "Bearer\(token)",
+            "Authorization" : "Bearer \(token)", // Oh my god, authorization didn't work because I forgot a separation space between Bearer and token
             "Host" : "api.producthunt.com"
         ]
     
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             // Check for error
             if let error = error { print(error.localizedDescription); return }
             
             // Check to see if there is any data that was retrieved.
             guard let data = data else { return }
+            print(data)
             
             // Attempt to decode the data
             guard let result = try? JSONDecoder().decode(PostList.self, from: data) else { return }
-            
             let post = result.posts
             
             // Return the result with the completion handler asynchronously.
