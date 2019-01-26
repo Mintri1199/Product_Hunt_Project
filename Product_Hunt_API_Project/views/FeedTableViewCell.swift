@@ -10,6 +10,17 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
     
+    var post: Post? {
+        didSet{
+            guard let post = post else { print("Invalid post"); return }
+            customContentView.nameLabel.text =  post.name
+            customContentView.taglineLabel.text = post.tagline
+            customContentView.cvStackView.commentLabel.text =  "Comments: \(post.commentsCount)"
+            customContentView.cvStackView.voteLabel.text =  "Votes: \(post.votesCount)"
+            updatePreviewImage()
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,6 +52,11 @@ class FeedTableViewCell: UITableViewCell {
         
     }
     
+    func updatePreviewImage() {
+        guard let post = post else {print("Invalid post"); return}
+        
+        customContentView.imageView.image =  UIImage(named: "placeholder")
+    }
     
     
 }
