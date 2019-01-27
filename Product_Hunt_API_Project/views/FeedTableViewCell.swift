@@ -23,7 +23,6 @@ class FeedTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        heightAnchor.constraint(equalToConstant: 250).isActive = true 
         setupCustomContent()
     }
     

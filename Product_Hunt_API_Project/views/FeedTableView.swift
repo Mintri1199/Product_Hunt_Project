@@ -10,6 +10,7 @@ import UIKit
 
 class FeedTableView: UITableView, UITableViewDataSource {
 
+    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         delegate = self
@@ -36,6 +37,15 @@ class FeedTableView: UITableView, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let post = posts[indexPath.row]
+        let commentVC = CommentViewController()
+        commentVC.commentTableView.comments = ["Blah blah blah!", "Good app.", "Wow."]
+        if let feedVC = self.findViewController() as? ViewController {
+            feedVC.navigationController?.pushViewController(commentVC, animated: true)
+        }
+    }
+    
     // If mockData var is set, call reloadData()
     var posts: [Post] = [] {
         didSet{
@@ -56,5 +66,18 @@ extension FeedTableView: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
+    }
+}
+
+// An extension to find the viewController a component is in
+extension UIView {
+    func findViewController() -> UIViewController? {
+        if let nextResponder = self.next as? UIViewController {
+            return nextResponder
+        } else if let nextResponder = self.next as? UIView {
+            return nextResponder.findViewController()
+        } else {
+            return nil
+        }
     }
 }

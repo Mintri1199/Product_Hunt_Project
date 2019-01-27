@@ -34,7 +34,6 @@ class NetworkManager {
             
             // Check to see if there is any data that was retrieved.
             guard let data = data else { return }
-            print(data)
             
             // Attempt to decode the data
             guard let result = try? JSONDecoder().decode(PostList.self, from: data) else { return }
