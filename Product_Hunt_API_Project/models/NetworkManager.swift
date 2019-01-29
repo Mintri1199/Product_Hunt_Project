@@ -14,19 +14,6 @@ class NetworkManager {
     var baseURL = "https://api.producthunt.com/v1/"
     var token = "ea37060aab65f22810a385fc08254f151b00ac19595799088f0c862efcdc62d8"
     
-    func makeRequest(for endpoint: EndPoints) -> URLRequest{
-        let stringParams = endpoint.paramsToString()
-        let path = endpoint.getPath()
-        let fullURL = URL(string: baseURL.appending("\(path)?\(stringParams)"))!
-        var request = URLRequest(url: fullURL)
-        request.httpMethod = endpoint.getHTTPMethod()
-        request.allHTTPHeaderFields = endpoint.getHeaders(token: token)
-        
-        return request
-        
-    }
-    
-    // What does this syntax mean?
     enum Result<T>{
         case success(T)
         case failure(Error)
@@ -35,30 +22,6 @@ class NetworkManager {
     enum EndPointError: Error {
         case  couldNotParse
         case  noData
-    }
-    
-    func getPosts(_ completion: @escaping (Result<[Post]>) -> Void)  {
-        let postResquest = makeRequest(for: .posts)
-        let task = urlSession.dataTask(with: postResquest) { data, response, error in
-            
-            // Check for error
-            if let error = error {
-                return completion(Result.failure(error))
-            }
-            
-            // Check to see if there any data was retrieved
-            guard let data = data else { return completion(Result.failure(EndPointError.noData))}
-            
-            // Attempt to decode the data
-            guard let result = try? JSONDecoder().decode(PostList.self, from: data) else { return completion(Result.failure(EndPointError.couldNotParse)) }
-            
-            let posts = result.posts
-            
-            DispatchQueue.main.async {
-                completion(Result.success(posts))
-            }
-        }
-        task.resume()
     }
     
     enum EndPoints {
@@ -96,7 +59,7 @@ class NetworkManager {
                     "search[featured]": "true"
                 ]
 
-            case .comments(let postId):
+            case let .comments(postId):
                 return [
                     "sort_by": "votes",
                     "order": "asc",
@@ -113,15 +76,49 @@ class NetworkManager {
             return parameterArray.joined(separator: "&")
         }
     }
+}
+
+extension NetworkManager {
+    
+    func makeRequest(for endpoint: EndPoints) -> URLRequest{
+        let stringParams = endpoint.paramsToString()
+        let path = endpoint.getPath()
+        let fullURL = URL(string: baseURL.appending("\(path)?\(stringParams)"))!
+        var request = URLRequest(url: fullURL)
+        request.httpMethod = endpoint.getHTTPMethod()
+        request.allHTTPHeaderFields = endpoint.getHeaders(token: token)
+        
+        return request
+    }
+    
+    func getPosts(_ completion: @escaping (Result<[Post]>) -> Void)  {
+        let postResquest = makeRequest(for: .posts)
+        let task = urlSession.dataTask(with: postResquest) { data, response, error in
+            
+            // Check for error
+            if let error = error { return completion(Result.failure(error)) }
+            
+            // Check to see if there any data was retrieved
+            guard let data = data else { return completion(Result.failure(EndPointError.noData))}
+            
+            // Attempt to decode the data
+            guard let result = try? JSONDecoder().decode(PostList.self, from: data) else { return completion(Result.failure(EndPointError.couldNotParse)) }
+            
+            let posts = result.posts
+            
+            DispatchQueue.main.async {
+                completion(Result.success(posts))
+            }
+        }
+        task.resume()
+    }
     
     func getComments (_ postId: Int, completion: @escaping (Result<[Comment]>) -> Void) {
         let commentRequest = makeRequest(for: .comments(postId: postId))
         let task = urlSession.dataTask(with: commentRequest) {data, response, error in
             
             // Check if there is error
-            if let error = error{
-                return completion(Result.failure(error))
-            }
+            if let error = error{ return completion(Result.failure(error)) }
             
             // Check if there any data was retrieved
             guard let data = data else { return completion(Result.failure(EndPointError.noData)) }

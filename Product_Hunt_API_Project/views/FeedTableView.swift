@@ -38,12 +38,14 @@ class FeedTableView: UITableView, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let post = posts[indexPath.row]
+        let post = posts[indexPath.row]
         let commentVC = CommentViewController()
-        commentVC.commentTableView.comments = ["Blah blah blah!", "Good app.", "Wow."]
         if let feedVC = self.findViewController() as? ViewController {
+            commentVC.commentTableView.postID = post.id
             feedVC.navigationController?.pushViewController(commentVC, animated: true)
         }
+        
+        
     }
     
     // If mockData var is set, call reloadData()
@@ -57,7 +59,12 @@ class FeedTableView: UITableView, UITableViewDataSource {
     
     func updateFeed() {
         networkManager.getPosts() { result in
-            self.posts = result
+            switch result {
+            case let  .success(posts):
+                self.posts = posts
+            case let .failure(error):
+                print(error)
+            }
         }
     }
 }

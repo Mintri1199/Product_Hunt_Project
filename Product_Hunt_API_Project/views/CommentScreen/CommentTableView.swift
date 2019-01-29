@@ -10,12 +10,16 @@ import UIKit
 
 class CommentTableView: UITableView, UITableViewDataSource {
     
+    var postID: Int!
     
-    var comments: [String]! {
+    var comments: [Comment] = [] {
         didSet{
             reloadData()
         }
     }
+    
+    var networdManager = NetworkManager()
+    
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame , style: style)
@@ -38,7 +42,7 @@ class CommentTableView: UITableView, UITableViewDataSource {
         let cell = dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
         
         let comment = comments[indexPath.row]
-        cell.commentTextView.text = comment
+        cell.commentTextView.text = comment.body
         return cell
     }
     
@@ -49,5 +53,19 @@ extension CommentTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
     }
+}
+
+extension CommentTableView {
     
+    func updateComment() {
+        networdManager.getComments(postID) { result in
+            switch result {
+                
+            case let .success(comments):
+                self.comments = comments
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
 }

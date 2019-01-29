@@ -14,6 +14,7 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
         setupCommentTable()
+        commentTableView.updateComment()
     }
     
     var commentTableView = CommentTableView()
