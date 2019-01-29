@@ -26,6 +26,7 @@
 		4442066E21FE436F00AE047C /* CommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066D21FE436F00AE047C /* CommentTableView.swift */; };
 		4442067021FE43F600AE047C /* CommentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442066F21FE43F600AE047C /* CommentCellTableViewCell.swift */; };
 		4442067321FE470600AE047C /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442067221FE470600AE047C /* CommentTextView.swift */; };
+		4442067521FE5A2100AE047C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442067421FE5A2100AE047C /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4442066D21FE436F00AE047C /* CommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableView.swift; sourceTree = "<group>"; };
 		4442066F21FE43F600AE047C /* CommentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellTableViewCell.swift; sourceTree = "<group>"; };
 		4442067221FE470600AE047C /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
+		4442067421FE5A2100AE047C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				4442065B21F84A5700AE047C /* Post.swift */,
+				4442067421FE5A2100AE047C /* Comment.swift */,
 				4442066721FD036800AE047C /* NetworkManager.swift */,
 			);
 			path = models;
@@ -334,6 +337,7 @@
 				4442067321FE470600AE047C /* CommentTextView.swift in Sources */,
 				4442065A21F8451400AE047C /* FeedTableView.swift in Sources */,
 				4442062621F8411D00AE047C /* AppDelegate.swift in Sources */,
+				4442067521FE5A2100AE047C /* Comment.swift in Sources */,
 				4442066A21FE432600AE047C /* CommentViewController.swift in Sources */,
 				4442066621FAA95800AE047C /* CVLabel.swift in Sources */,
 				4442062E21F8411D00AE047C /* Product_Hunt_API_Project.xcdatamodeld in Sources */,
